@@ -1,0 +1,50 @@
+.outer{
+    width: 200px;
+    height: 100px;
+    border: 3px solid #93A6AA;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #DBD3D8;
+    /* transition: flex-direction 4s; */
+}
+
+.inner{
+    width: 80px;
+    height: 80px;
+    border: 0px solid #2E5E4E;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #2E5E4E;
+    background-image: url(moon.jpeg);
+    background-size: cover;
+    
+    
+}
+
+.outer:hover{
+    /* flex-direction: row-reverse; */
+    .inner{
+        animation-name: toggle;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }  
+}
+
+@keyframes toggle{
+    0%{
+        margin-left: 10px;
+        background-image: url(moon.jpeg);
+    }
+    100%{
+        margin-left: 100px;
+        background-image: url(sun.jpeg);
+    }
+}

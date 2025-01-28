@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#h{
+    background-color: black;
+    height: 60px;
+}
+a{
+    color: white;
+    margin-right: 200px;
+}
+#a{
+    color: #f08804;
+    font-size: 25px;
+}
+button{
+    background-color: #f08804;
+    color: white;
+}
+.q{
+    height: 100px;
+    width: 100px;
+    border: 10px solid pink;
+    display: inline-block;
+}
+#i{
+    background-color: aqua;
+}
+#j{
+    background-color: antiquewhite;
+}
+#k{
+    background-color: bisque;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+#box{
+    height: 810px;
+}

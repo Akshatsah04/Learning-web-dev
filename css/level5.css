@@ -1,0 +1,35 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    /* transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-delay: 1s; */
+    /* transition: all 2s ease-in 1s; */
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    /* animation-name: coloranimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    animation: coloranimation 2s ease-in 0s infinite alternate;
+
+    
+
+}
+@keyframes coloranimation{
+    from{ left: 100px;}
+    to{left: 400px;}
+}
+
+div:hover{
+    rotate: 90deg;
+    /* background-color: rgb(43, 226, 113); */
+    
+
+}
+div:active{
+    background-color: blueviolet;
+}

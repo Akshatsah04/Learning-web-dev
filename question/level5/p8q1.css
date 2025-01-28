@@ -1,0 +1,18 @@
+div{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #6A9C89;
+    border-top: 10px solid #16423C;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate{
+    from{rotate: 0deg;}
+    to{rotate: 360deg;}
+}

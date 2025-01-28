@@ -1,0 +1,16 @@
+h1{
+    width: 300px;
+    background-color: pink;
+    border-style:dashed;
+    border-color: aqua;
+    border-width: 10px;
+    text-align: center;
+}
+div{
+    width: 65px;
+    border: 5px solid pink;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding: 50px;
+}

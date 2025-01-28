@@ -1,0 +1,28 @@
+ul{
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+li{
+    list-style-type: none;
+    display: inline;
+}
+a{
+    background-color: aqua;
+    text-decoration: none;
+}
+
+#outbox{
+    height: 400px;
+    width: 400px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inbox{
+    height: 100px;
+    width: 100px;
+    background-color: bisque;
+}

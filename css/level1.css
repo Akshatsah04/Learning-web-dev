@@ -1,0 +1,30 @@
+ *{
+   text-align: center;
+ }
+ h1{
+    color: crimson;
+ }
+ p{
+   color: blue;
+   text-align: center;
+   font-family: cursive;
+   font-size: 20px;
+   line-height: 30px;
+   text-transform: capitalize;
+ }
+ button{
+   color: aliceblue;
+   background-color: gray;
+ }
+ body{
+   background-color: rgb(200, 255, 200);
+ } 
+ h2{
+   text-decoration: red wavy underline;
+ }
+ h3{
+   text-decoration: overline;
+ }
+ h4{
+   text-decoration: line-through;
+ }
