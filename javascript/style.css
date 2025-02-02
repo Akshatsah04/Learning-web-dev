@@ -5,8 +5,20 @@
 .darkmode{
     background-color: black;
     color: white;
+    #bt1{
+        border: 2px solid rgb(225, 2, 255);
+    }
 }
 .lightmode{
     background-color: white;
     color: black;
+   
+}
+
+#bt1{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 50px;
+
 }

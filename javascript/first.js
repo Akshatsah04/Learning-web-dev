@@ -234,3 +234,21 @@ bt1.addEventListener("click" , ()=>{
         mode="light";
     }
 })
+
+
+class person {
+    eat (){
+        console.log("eat");
+    }
+    sleep (){
+        console.log("sleep");
+    }
+}
+
+class engineer extends person {
+    work (){
+        console.log("solve problem");
+    }
+}
+
+let akshat = new engineer
