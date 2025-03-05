@@ -252,3 +252,64 @@ class engineer extends person {
 }
 
 let akshat = new engineer
+
+async function getfacts(){
+    
+
+    let url = "https://meowfacts.herokuapp.com/";
+
+    let res = await fetch(url);
+
+    let data = await res.json();
+
+    console.log(data.data[0]);
+
+    let para = document.querySelector(".fac");
+
+    para.innerText=data.data[0];
+
+
+}
+async function getfacts(){
+    
+
+    let url = "https://meowfacts.herokuapp.com/";
+
+    let res = await fetch(url);
+
+    let data = await res.json();
+
+    console.log(data.data[0]);
+
+    let para = document.querySelector(".fac");
+
+    para.innerText=data.data[0];
+
+
+}
+async function getimg(){
+    
+
+    let url = "https://dog.ceo/api/breeds/image/random";
+    let res = await fetch(url);
+
+    let data2 = await res.json();
+
+    console.log(data2.message);
+
+    let img2 = document.querySelector(".img");
+
+    img2.style.backgroundImage = `url(${data2.message})`;
+
+
+}
+
+let bt2 = document.querySelector("#bt2");
+
+bt2.addEventListener("click",()=>{
+    getfacts()
+    getimg()
+});
+
+
+

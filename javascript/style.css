@@ -22,3 +22,11 @@
     border-radius: 50px;
 
 }
+.img{
+    height: 500px;
+    width: 500px;
+    /* background-color: black; */
+    background-image: url("") ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
