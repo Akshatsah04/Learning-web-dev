@@ -306,9 +306,11 @@ async function getimg(){
 
 let bt2 = document.querySelector("#bt2");
 
+
 bt2.addEventListener("click",()=>{
     getfacts()
     getimg()
+
 });
 
 
