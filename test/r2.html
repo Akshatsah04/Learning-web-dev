@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Reveal Website</title>
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'orbitron': ['Orbitron', 'monospace'],
+          },
+          colors: {
+            cyber: {
+              cyan: '#66fcf1',
+              teal: '#45a29e',
+              dark: '#0b0c10',
+              darker: '#1f2833',
+              gray: '#c5c6c7'
+            }
+          },
+          keyframes: {
+            'card-flip': {
+              '0%': { transform: 'rotateY(0deg)' },
+              '100%': { transform: 'rotateY(180deg)' }
+            },
+            'card-flip-back': {
+              '0%': { transform: 'rotateY(180deg)' },
+              '100%': { transform: 'rotateY(0deg)' }
+            },
+            'glow-pulse': {
+              '0%, 100%': { boxShadow: '0 0 20px #66fcf1, 0 0 40px #66fcf1, 0 0 60px #66fcf1' },
+              '50%': { boxShadow: '0 0 30px #66fcf1, 0 0 60px #66fcf1, 0 0 90px #66fcf1' }
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          },
+          animation: {
+            'card-flip': 'card-flip 1s ease-in-out forwards',
+            'card-flip-back': 'card-flip-back 1s ease-in-out forwards',
+            'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+            'float': 'float 3s ease-in-out infinite'
+          }
+        }
+      },
+      plugins: []
+    };
+  </script>
+  <style>
+    .card-container {
+      perspective: 1000px;
+    }
+    .card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 overflow-hidden bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark">
+  <!-- Background effects -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyber-teal/10 rounded-full blur-3xl animate-pulse"></div>
+
+  <!-- Main card container -->
+  <div class="card-container animate-float">
+    <div class="card w-80 h-96 md:w-96 md:h-[28rem]">
+      <!-- Front face -->
+      <div class="card-face bg-gradient-to-br from-cyber-darker to-cyber-dark border border-cyber-teal/30 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-2xl animate-glow-pulse">
+        <div class="mb-6 p-4 rounded-full bg-cyber-cyan/20 backdrop-blur-sm">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyber-cyan to-cyber-teal rounded-full flex items-center justify-center animate-pulse">
+            <svg class="w-12 h-12 text-cyber-cyan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm4-9h-3V8h-2v3H8v2h3v3h2v-3h3z"/>
+            </svg>
+          </div>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold text-cyber-cyan mb-4 tracking-wider font-orbitron">
+          Mystery Awaits
+        </h1>
+        <p class="text-cyber-gray text-lg md:text-xl font-light tracking-wide">
+          Click to uncover the hidden secret!
+        </p>
+        <div class="mt-6 w-full h-1 bg-gradient-to-r from-transparent via-cyber-cyan to-transparent animate-pulse"></div>
+        <button onclick="flipCard()" class="mt-4 px-4 py-2 bg-cyber-cyan/10 rounded-lg border border-cyber-cyan/30 text-cyber-cyan text-sm font-mono tracking-widest hover:bg-cyber-cyan/20 transition">
+          REVEAL NOW
+        </button>
+      </div>
+
+      <!-- Back face -->
+      <div class="card-face card-back bg-gradient-to-br from-cyber-teal/20 to-cyber-cyan/20 border border-cyber-cyan/50 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-2xl backdrop-blur-sm">
+        <div class="mb-6 p-4 rounded-full bg-cyber-cyan/30 backdrop-blur-sm animate-glow-pulse">
+          <svg class="w-12 h-12 text-cyber-cyan animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-2-12h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2zm0 2v4h4v-4z"/>
+          </svg>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold text-cyber-cyan mb-4 tracking-wider font-orbitron">
+          Secret Revealed!
+        </h1>
+        <div class="space-y-4">
+          <p class="text-cyber-gray text-lg md:text-xl font-light tracking-wide">
+            You've unlocked the truth!
+          </p>
+          <p class="text-cyber-cyan text-base md:text-lg font-medium">
+            Start your adventure now... 🚀
+          </p>
+        </div>
+        <div class="mt-6 w-full h-1 bg-gradient-to-r from-cyber-cyan via-cyber-teal to-cyber-cyan animate-pulse"></div>
+        <button onclick="flipCard()" class="mt-4 px-4 py-2 bg-cyber-cyan/10 rounded-lg border border-cyber-cyan/30 text-cyber-cyan text-sm font-mono tracking-widest hover:bg-cyber-cyan/20 transition">
+          BACK TO MYSTERY
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-8 left-8 w-2 h-2 bg-cyber-cyan rounded-full animate-pulse"></div>
+  <div class="absolute top-12 right-12 w-1 h-1 bg-cyber-teal rounded-full animate-pulse"></div>
+  <div class="absolute bottom-8 left-12 w-1.5 h-1.5 bg-cyber-cyan rounded-full animate-pulse"></div>
+  <div class="absolute bottom-12 right-8 w-2 h-2 bg-cyber-teal rounded-full animate-pulse"></div>
+
+  <script>
+    function flipCard() {
+      try {
+        const card = document.querySelector('.card');
+        card.classList.toggle('flipped');
+        console.log('Card flipped, current state:', card.classList.contains('flipped') ? 'Back' : 'Front');
+      } catch (error) {
+        console.error('Error flipping card:', error);
+      }
+    }
+
+    // Auto-flip after 3 seconds
+    window.onload = () => {
+      setTimeout(() => {
+        try {
+          flipCard();
+          console.log('Auto-flip triggered after 3 seconds');
+        } catch (error) {
+          console.error('Auto-flip error:', error);
+        }
+      }, 3000);
+    };
+  </script>
+</body>
+</html>

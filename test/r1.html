@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Message Reveal Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="r1.css" />
+</head>
+<body>
+  <div class="scene">
+    <div class="card" id="flipCard">
+      <div class="card-face card-front">
+        <h1>Click Me</h1>
+        <p>There's something waiting for you...</p>
+      </div>
+      <div class="card-face card-back">
+        <h2>🧠 You Cracked It!</h2>
+        <p>“In the heart of the grid lies your next clue. Keep searching, brave solver...”</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("flipCard").addEventListener("click", function () {
+      this.classList.toggle("flipped");
+    });
+  </script>
+</body>
+</html>
