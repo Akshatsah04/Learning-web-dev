@@ -12,7 +12,7 @@ console.log(`the system uptime is ${os.uptime()} second`);
 const currntOs = {
     name : os.type(),
     release :os.release(),
-    totalMem : os.freemem(),
+    totalMem : os.totalmem(),
     freeMem : os.freemem()
 }
 console.log(currntOs)

@@ -15,3 +15,64 @@ header{
   height: 4rem;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 10) , 0px 1px 2px 0px rgba(0,0,0,0.06);
 }
+
+form{
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ser{
+  height: 50%;
+  margin: 1rem;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid rgb(190, 190, 190);
+  border-radius: .5rem;
+  padding-left: 1rem;
+}
+
+button{
+  height: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  border-radius: .5rem ;
+  background-color: black;
+  color: white;
+}
+.inte{
+  padding: 2rem;
+}
+
+.it{
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+li{
+  margin: .5rem;
+  font-size: 1.2rem;
+}
+
+
+.getbu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin: 10%;
+  padding: 1rem;
+  background-color: rgb(231, 231, 231);
+  border-radius: .5rem;
+}
+.get{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;
+  border-radius: .5rem;
+  background-color: rgb(236, 172, 51);
+  height: 2rem;
+  font-weight: bold;
+}

@@ -1,19 +1,19 @@
-import React from "react"
-import padsData from "./data"
-import Pad from "./pads"
+import WindowTracker from "./windo"
 
 export default function App() {
-    const [pads, setPads] = React.useState(padsData)
-
-    const buttonElements = pads.map(padin => (
-        <Pad key={padin.id} color={padin.color} on={padin.on}/>
-    ))
+    /**
+     * Challenge:
+     * 1. Create state called `show`, default to `true`
+     * 2. When the button is clicked, toggle `show`
+     * 3. Only display `<WindowTracker>` if `show` is `true`
+     */
     
     return (
-        <main>
-            <div className="pad-container">
-                {buttonElements}
-            </div>
+        <main className="container">
+            <button>
+                Toggle WindowTracker
+            </button>
+            <WindowTracker />
         </main>
     )
 }
