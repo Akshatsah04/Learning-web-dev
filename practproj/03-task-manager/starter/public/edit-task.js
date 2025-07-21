@@ -12,7 +12,7 @@ const showTask = async () => {
   try {
     const {
       data: { task },
-    } = await axios.get(`/api/v1/tasks/${id}`)
+    } = await axios.get(`h/api/v1/tasks/${id}`)
     const { _id: taskID, completed, name } = task
 
     taskIDDOM.textContent = taskID
