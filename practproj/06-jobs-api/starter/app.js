@@ -42,7 +42,7 @@ const start = async () => {
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
-    console.log(process.env.MONGO_URI);
+    // console.log(process.env.MONGO_URI);
   } catch (error) {
     console.log(error);
   }
